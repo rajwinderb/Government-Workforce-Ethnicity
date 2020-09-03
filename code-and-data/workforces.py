@@ -7,7 +7,7 @@ def read_civil_data():
     # create a list for the data
     data = []
     # Open the spreadsheet to read it
-    with open('civil-service-workforce-2019.csv', 'r') as Civil_Service_Workforce:
+    with open('data/civil-service-workforce-2019.csv', 'r') as Civil_Service_Workforce:
         spreadsheet = csv.DictReader(Civil_Service_Workforce)
         # Add each row of the spreadsheet to the data list
         for row in spreadsheet:
@@ -21,7 +21,7 @@ def read_fire_and_rescue_data():
     # create a list for the data
     data = []
     # Open the spreadsheet to read it
-    with open('fire-and-rescue-service-workforce.csv', 'r') as Fire_and_Rescue_Workforce:
+    with open('data/fire-and-rescue-service-workforce.csv', 'r') as Fire_and_Rescue_Workforce:
         spreadsheet = csv.DictReader(Fire_and_Rescue_Workforce)
         # Add each row of the spreadsheet to the data list
         for row in spreadsheet:
@@ -35,7 +35,7 @@ def read_prison_officer_data():
     # Create a list for the data
     data = []
     # open spreadsheet to read it
-    with open('prison-officer-workforce-data.csv', 'r') as Prison_Officer_Workforce:
+    with open('data/prison-officer-workforce-data.csv', 'r') as Prison_Officer_Workforce:
         spreadsheet = csv.DictReader(Prison_Officer_Workforce)
         # add each row of the spreadsheet into the data list
         for row in spreadsheet:
@@ -49,7 +49,7 @@ def read_social_workers_data():
     # Create a list for the data
     data = []
     # open spreadsheet to read it
-    with open('social-workers-for-children-and-families.csv', 'r') as Social_Service_Workforce:
+    with open('data/social-workers-for-children-and-families.csv', 'r') as Social_Service_Workforce:
         spreadsheet = csv.DictReader(Social_Service_Workforce)
         # add each row of the spreadsheet into the data list
         for row in spreadsheet:
@@ -183,7 +183,7 @@ def civil_service_summary():
 
     field_names = ['Ethnicity', '2015 total', '2015 percentage (%)', '2019 total', '2019 percentage (%)',
                    'Change in percentage']
-    with open('civil-service-workforce-summary.csv', 'w+') as Civil_Service_Workforce:
+    with open('summary-data/civil-service-workforce-summary.csv', 'w+') as Civil_Service_Workforce:
         spreadsheet = csv.DictWriter(Civil_Service_Workforce, fieldnames=field_names)
         spreadsheet.writeheader()
         spreadsheet.writerows(output)
@@ -308,7 +308,7 @@ def fire_and_rescue_summary():
 
     field_names = ['Ethnicity', '2015 total', '2015 percentage (%)', '2019 total', '2019 percentage (%)',
                    'Change in percentage']
-    with open('fire-and-rescue-workforce-summary.csv', 'w+') as Fire_and_Rescue_Workforce:
+    with open('summary-data/fire-and-rescue-workforce-summary.csv', 'w+') as Fire_and_Rescue_Workforce:
         spreadsheet = csv.DictWriter(Fire_and_Rescue_Workforce, fieldnames=field_names)
         spreadsheet.writeheader()
         spreadsheet.writerows(output)
@@ -404,7 +404,7 @@ def prison_officer_summary():
 
     field_names = ['Ethnicity', '2015 total', '2015 percentage(%)', '2019 total', '2019 percentage(%)',
                    'Change in percentage']
-    with open('prison_officer_workforce_summary.csv', 'w+') as Prison_Officer_Workforce:
+    with open('summary-data/prison_officer_workforce_summary.csv', 'w+') as Prison_Officer_Workforce:
         spreadsheet = csv.DictWriter(Prison_Officer_Workforce, fieldnames=field_names)
         spreadsheet.writeheader()
         spreadsheet.writerows(output)
@@ -530,7 +530,7 @@ def social_workers_summary():
 
     field_names = ['Ethnicity', '2017-18 total', '2017-18 percentage(%)', '2016-17 total', '2016-17 percentage(%)',
                    'Change in percentage']
-    with open('social-workers-for-children-and-families-summary.csv', 'w+') as Social_Service_Workforce:
+    with open('summary-data/social-workers-for-children-and-families-summary.csv', 'w+') as Social_Service_Workforce:
         spreadsheet = csv.DictWriter(Social_Service_Workforce, fieldnames=field_names)
         spreadsheet.writeheader()
         spreadsheet.writerows(output)
