@@ -477,6 +477,14 @@ def social_workers_summary():
     # Create dictionary for what we want
     output = []
 
+    # Add All data
+    all_change = round(float(all_2017_2018[1]) - float(all_2016_2017[1]), 1)
+    all = {'Ethnicity': 'All', '2016-17 total': all_2016_2017[0],
+             '2016-17 percentage(%)': all_2016_2017[1], '2017-18 total': all_2017_2018[0],
+             '2017-18 percentage(%)': all_2017_2018[1],
+             'Change in percentage': all_change}
+    output.append(all)
+
     # Add Asian data
     asian_change = round(float(asian_2017_2018[1]) - float(asian_2016_2017[1]), 1)
     asian = {'Ethnicity': 'Asian', '2016-17 total': asian_2016_2017[0],
