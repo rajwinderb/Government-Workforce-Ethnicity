@@ -57,7 +57,20 @@ def plot_social_workers_data():
 
     plt.show()
 
-plot_civil_data()
-plot_prison_officer_data()
-plot_fire_and_rescue_data()
-plot_social_workers_data()
+def choose_workforce():
+    print('Which workforce would you like the summary of? (Civil Service / Fire and Rescue / Prison Officer / Social '
+          'Workers)')
+    workforce = input('Please enter as shown above: ')
+
+    if workforce == 'Civil Service':
+        plot_civil_data()
+    elif workforce == 'Fire and Rescue':
+        plot_fire_and_rescue_data()
+    elif workforce == 'Prison Officer':
+        plot_prison_officer_data()
+    elif workforce == 'Social Workers':
+        plot_social_workers_data()
+    else:
+        print('Please enter workforce as shown.')
+
+choose_workforce()
